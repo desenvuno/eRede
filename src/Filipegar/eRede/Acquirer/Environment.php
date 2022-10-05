@@ -26,7 +26,7 @@ class Environment implements \Filipegar\eRede\Environment
      */
     public static function sandbox()
     {
-        $api = 'https://api.userede.com.br/desenvolvedores/v1/';
+        $api = 'https://sandbox-erede.useredecloud.com.br/v1/';
         return new Environment($api);
     }
 
