@@ -20,6 +20,7 @@ class ThreeDSecure implements \JsonSerializable
     private $returnMessage;
     private $threeDIndicator;
     private $DirectoryServerTransactionId;
+    private $device;
 
     public static function fromJson($json)
     {
@@ -43,6 +44,7 @@ class ThreeDSecure implements \JsonSerializable
                 : null;
             $this->threeDIndicator = isset($data->threeDSecure->threeDIndicator) ? $data->threeDSecure->threeDIndicator : null;
             $this->DirectoryServerTransactionId = isset($data->threeDSecure->DirectoryServerTransactionId) ? $data->threeDSecure->DirectoryServerTransactionId : null;
+            $this->device = isset($data->threeDSecure->device) ? $data->threeDSecure->device : null;
         }
     }
 
@@ -220,6 +222,22 @@ class ThreeDSecure implements \JsonSerializable
     public function setDirectoryServerTransactionId($DirectoryServerTransactionId)
     {
         $this->DirectoryServerTransactionId = $DirectoryServerTransactionId;
+    }
+
+    /**
+     * @return Device
+     */
+    public function getDevice()
+    {
+        return $this->device;
+    }
+
+    /**
+     * @param Device $device
+     */
+    public function setDevice($device)
+    {
+        $this->device = $device;
     }
 
     /**
