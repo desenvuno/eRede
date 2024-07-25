@@ -21,6 +21,8 @@ class ThreeDSecure implements \JsonSerializable
     private $threeDIndicator;
     private $DirectoryServerTransactionId;
     private $device;
+    private $billing;
+    private $ipAddress;
 
     public static function fromJson($json)
     {
@@ -45,7 +47,29 @@ class ThreeDSecure implements \JsonSerializable
             $this->threeDIndicator = isset($data->threeDSecure->threeDIndicator) ? $data->threeDSecure->threeDIndicator : null;
             $this->DirectoryServerTransactionId = isset($data->threeDSecure->DirectoryServerTransactionId) ? $data->threeDSecure->DirectoryServerTransactionId : null;
             $this->device = isset($data->threeDSecure->device) ? $data->threeDSecure->device : null;
+            $this->billing = isset($data->threeDSecure->billing) ? $data->threeDSecure->billing : null;
+            $this->ipAddress = isset($data->threeDSecure->ipAddress) ? $data->threeDSecure->ipAddress : null;
         }
+    }
+
+    public function getBilling()
+    {
+        return $this->billing;
+    }
+
+    public function setBilling($billing)
+    {
+        $this->billing = $billing;
+    }
+
+    public function getIpAddress()
+    {
+        return $this->ipAddress;
+    }
+
+    public function setIpAddress($ipAddress)
+    {
+        $this->ipAddress = $ipAddress;
     }
 
     /**
