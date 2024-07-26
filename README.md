@@ -1,4 +1,4 @@
-#e.Rede PHP SDK
+teste #e.Rede PHP SDK
 
 Esta é uma implementação framework agnostic em PHP dos serviços RESTful do e.Rede da [UseRede](https://www.userede.com.br/desenvolvedores/pt/produto/e-Rede#documentacao).
 
