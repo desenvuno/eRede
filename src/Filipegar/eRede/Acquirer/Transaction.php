@@ -428,7 +428,7 @@ class Transaction implements \JsonSerializable, Requestable
         return $card;
     }
 
-    public function threeDSecure($mpi = ThreeDSecure::MPI_EREDE, $onFailure = ThreeDSecure::FAILURE_DECLINE, $directoryServerTransactionId = null, $threeDIndicator = null, $device = null)
+    public function threeDSecure($mpi = ThreeDSecure::MPI_EREDE, $onFailure = ThreeDSecure::FAILURE_DECLINE, $directoryServerTransactionId = null, $threeDIndicator = null, $device = null, $billing = null)
     {
         $threeDScure = new ThreeDSecure();
 
@@ -441,6 +441,11 @@ class Transaction implements \JsonSerializable, Requestable
         if ($device) {
             $threeDScure->setDevice($device);
         }
+
+        if ($billing) {
+            $threeDScure->setBilling($billing);
+        }
+
         $this->setThreeDSecure($threeDScure);
 
         return $threeDScure;
